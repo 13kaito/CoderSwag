@@ -1,7 +1,8 @@
-package com.kk.coderswag
+package com.kk.coderswag.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.kk.coderswag.R
 
 class MainActivity : AppCompatActivity() {
 
