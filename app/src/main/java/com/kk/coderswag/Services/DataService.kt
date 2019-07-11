@@ -6,7 +6,7 @@ import com.kk.coderswag.Model.Product
 object DataService {
     val categories = listOf(
         Category("SHIRTS", "shirtimage"),
-        Category("HOODIES", "hoodiimage"),
+        Category("HOODIES", "hoodieimage"),
         Category("HATS", "hatimage"),
         Category("DIGITAL", "digitalgoodsimage")
     )
