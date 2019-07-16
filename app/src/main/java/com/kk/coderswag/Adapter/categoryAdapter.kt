@@ -11,25 +11,33 @@ import com.kk.coderswag.Model.Category
 import com.kk.coderswag.R
 import java.text.FieldPosition
 
-class categoryAdapter(context: Context, categories : List<Category>) : BaseAdapter() {
-
-    val context = context
-    val categories = categories
+class categoryAdapter(val context: Context, val categories: List<Category>) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val categoryView:View
+        val holder:ViewHolder
 
-        categoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item, null)
-        val categoryImage : ImageView = categoryView.findViewById(R.id.categoryImg)
-        val categorName : TextView = categoryView.findViewById(R.id.categoryName)
+
+        if(convertView == null){
+
+            categoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item, null)
+            holder = ViewHolder()
+            holder.CategoryImage = categoryView.findViewById(R.id.categoryImg)
+            holder.CategoryName = categoryView.findViewById(R.id.categoryName)
+
+            categoryView.tag = holder
+        } else {
+            holder = convertView.tag as ViewHolder
+            categoryView = convertView
+        }
+
 
         val category = categories[position]
 
         val resourcesId = context.resources.getIdentifier(category.image, "drawable", context.packageName)
 
-        categoryImage.setImageResource(resourcesId)
-        println(resourcesId)
-        categorName.text = category.title
+        holder.CategoryImage?.setImageResource(resourcesId)
+        holder.CategoryName?.text = category.title
 
 
         return categoryView
@@ -47,4 +55,8 @@ class categoryAdapter(context: Context, categories : List<Category>) : BaseAdapt
         return categories.count()
     }
 
+    private class ViewHolder{
+        var CategoryImage:ImageView? = null
+        var CategoryName:TextView? = null
+    }
 }
