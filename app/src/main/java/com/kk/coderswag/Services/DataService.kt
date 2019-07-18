@@ -31,4 +31,16 @@ object DataService {
         Product("Devslopes Shirt White", "$18", "shirt3"),
         Product("Devslopes Shirt Blue", "$22", "shirt4")
     )
+
+    val digitalGood = listOf<Product>()
+
+    fun getProduct(category: String):List<Product>{
+
+        return when(category){
+            "SHIRTS" -> shirts
+            "HATS" -> hats
+            "HOODIES" -> hoodies
+            else -> digitalGood
+        }
+    }
 }
