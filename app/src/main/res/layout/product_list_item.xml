@@ -2,30 +2,31 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              xmlns:tools="http://schemas.android.com/tools"
+                                             android:background="@android:color/white"
                                              android:layout_width="match_parent"
                                              android:layout_height="wrap_content">
 
     <ImageView
             android:layout_width="0dp"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/hat1"
-            android:id="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="250dp"
+            android:id="@+id/productImg" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"/>
+            app:layout_constraintDimensionRatio="1:1" tools:srcCompat="@drawable/hat1" android:scaleType="center"/>
     <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2" tools:text="Beanie"
-            android:textSize="18sp" app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:id="@+id/productName" tools:text="Beanie"
+            android:textSize="18sp" app:layout_constraintTop_toBottomOf="@+id/productImg"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" android:textAlignment="center"
             android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
     <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3" tools:text="$18" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/productPrice" tools:text="$18" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintEnd_toEndOf="parent"
-            android:textAlignment="center" app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:textAlignment="center" app:layout_constraintTop_toBottomOf="@+id/productName"
             android:layout_marginEnd="16dp" android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="16dp"/>
 </android.support.constraint.ConstraintLayout>
